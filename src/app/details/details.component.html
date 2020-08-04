@@ -1,0 +1,22 @@
+<!--header-->
+<app-header></app-header>
+<!-- Box for details of chosen product -->
+<div class="boxCenter">
+  <h1>{{getproduct.cardTitle}}</h1>
+
+  <img src="{{getproduct.primaryMediaUrl}}" alt="izdelek" width="50%" height="65%">
+  <div *ngFor="let inneritem of getproduct.listOfPlans">
+    <p style="text-align: right;margin-top: -30%;margin-right: 25%">Price:{{inneritem.price.amount}}{{inneritem.price.currency}}</p>
+    <p style="text-align: right;margin-top: -1%;margin-right: 25%">In stock:{{getproduct.availableQuantity}}</p>
+  </div>
+  <!-- quantity-->
+  <div class="vnos">
+    <label for="fname">Quantity</label>
+    <input min="1" max="100" type="number" id="fname" name="fname" placeholder="1"><br><br>
+  </div>
+  <app-button (click)="Callclicked(getproduct)" [routerLink]="['/home']"></app-button>
+  <div style="margin-top: 10%">
+    <h2>Description</h2>
+    <p>{{getproduct.cardDescription}}</p>
+  </div>
+</div>

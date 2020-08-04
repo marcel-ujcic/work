@@ -1,0 +1,20 @@
+<app-header></app-header>
+<!--<button (click)="staticItemsArrayLen()">prtisni</button>-->
+
+<div *ngFor="let izdelek of  vVuzu">
+  <div class="rectangle">
+  <p>{{izdelek.cardTitle}}</p>
+  <img src="{{izdelek.primaryMediaUrl}}" width="25%" height="25%">
+  <button (click)="deleteItem(izdelek)" style="margin-left: 75%">X</button>
+    <div *ngFor="let inneritem of izdelek.listOfPlans">
+      <p style="text-align: right">{{inneritem.price.amount}}{{inneritem.price.currency}}</p>
+    </div>
+  </div>
+</div>
+<div class="rectangleTotal">
+  <p>Total {{getVsota}} EUR</p>
+  <p>Shipping: {{getShiping}} EUR</p>
+  <p>For payment: {{getShiping+getVsota}} EUR</p>
+  <app-btn-check-uout (click)="ClearCard()" [routerLink]="['/home']" routerLinkActive="active"></app-btn-check-uout>
+</div>
+

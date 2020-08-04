@@ -1,0 +1,21 @@
+<!-- header-->
+<app-header></app-header>
+<!-- Products grid section-->
+<ul style="list-style-type:none;" >
+  <div *ngFor="let item of products">
+      <li>
+        <!--Box for each product in a shop -->
+        <div class="box" [routerLink]="['/details']" routerLinkActive="active" (click)="sendtoDetails(item)">
+          <img src="{{item.primaryMediaUrl}}" alt="slika" width="100" height="100">
+          <p style="color:black">{{item.cardTitle}}</p>
+          <p>{{item.cardDescription}}</p>
+          <!-- loop for price and quantity of each item-->
+          <div *ngFor="let inneritem of item.listOfPlans">
+            <p style="text-align: right">{{inneritem.price.amount}}{{inneritem.price.currency}}</p>
+            <p style="text-align: right;margin-top: -15px">In stock:{{item.availableQuantity}}</p>
+          </div>
+        </div>
+      </li>
+  </div>
+</ul>
+

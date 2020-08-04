@@ -1,0 +1,15 @@
+.box {
+  background-color:whitesmoke;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: black;
+  display: block;
+  width: 550px;
+  height: 550px;
+  padding: 5px;
+  margin-top:5px
+}
+
+a.box{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
